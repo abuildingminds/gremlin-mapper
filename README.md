@@ -1,21 +1,20 @@
-# gremlin-orm
+# gremlin-mapper
 
-[![Build Status](https://travis-ci.org/gremlin-orm/gremlin-orm.svg?branch=master)](https://travis-ci.org/gremlin-orm/gremlin-orm)
-[![Coverage Status](https://coveralls.io/repos/github/gremlin-orm/gremlin-orm/badge.svg?branch=master&update)](https://coveralls.io/github/gremlin-orm/gremlin-orm?branch=master)
+[![Build Status](https://travis-ci.org/gremlin-mapper/gremlin-mapper.svg?branch=master)](https://travis-ci.org/gremlin-mapper/gremlin-mapper)
+[![Coverage Status](https://coveralls.io/repos/github/gremlin-mapper/gremlin-mapper/badge.svg?branch=master&update)](https://coveralls.io/github/gremlin-mapper/gremlin-mapper?branch=master)
 
-gremlin-orm is an ORM for graph databases in Node.js.  Currently working on Neo4j and Microsoft
-Azure Cosmos DB with more to come in the future.
+gremlin-mapper is an gremlin graph databases object mapper for JavaScript.  Currently working nad tested on Azure Cosmos DB.
 
 ## Installation
 
 ```bash
-$ npm install --save gremlin-orm
+$ npm i gremlin-mapper
 ```
 
 ## Example
 
 ```javascript
-const gremlinOrm = require('gremlin-orm');
+const gremlinOrm = require('gremlin-mapper');
 const g = new gremlinOrm('neo4j'); // connects to localhost:8182 by default
 
 // Can pass more configuation
@@ -54,10 +53,10 @@ Person.create(req.body, (error, result) => {
 
 ### Initialization
 
-Initialize the gremlin-orm instance with parameters matching the [gremlin-javascript](https://github.com/jbmusso/gremlin-javascript/blob/master/gremlin-client/README.md) `createClient()` initialization - with the addition of the dialect argument.
+Initialize the gremlin-mapper instance with parameters matching the [gremlin-javascript](https://github.com/jbmusso/gremlin-javascript/blob/master/gremlin-client/README.md) `createClient()` initialization - with the addition of the dialect argument.
 
 #### Arguments
-* `dialect` (string or Array): Required argument that takes string (`'neo4j'`) or array (`['azure', '<partitionName>']`).
+* `dialect` (string or Array): Required argument that takes  array (`['azure', '<partitionName>']`).
 * `port`: Defaults to '8182'
 * `host`: Defaults to localhost
 * `options`: Options object which takes the same parameters as gremlin-javascript's `createClient()`
@@ -74,7 +73,7 @@ Initialize the gremlin-orm instance with parameters matching the [gremlin-javasc
 
 #### Example
 ```javascript
-const gremlinOrm = require('gremlin-orm');
+const gremlinOrm = require('gremlin-mapper');
 const g = new gremlinOrm(['azure', 'partitionName'], '443', 'example.com', {ssl: true, user: 'sample-user', password: 'sample-password'});
 ```
 
@@ -87,7 +86,7 @@ const g = new gremlinOrm(['azure', 'partitionName'], '443', 'example.com', {ssl:
 
 #### Generic Methods
 * [query](#query) - run a Gremlin query string on a Model
-* [queryRaw](#queryRaw) - perform a raw query on the gremlin-orm root and return raw data
+* [queryRaw](#queryRaw) - perform a raw query on the gremlin-mapper root and return raw data
 * [update](#update) - update specific props on an existing vertex or edge
 * [delete](#delete) - delete an existing vertex or edge
 * [order](#order) - order the results by property and asc/desc
@@ -224,7 +223,7 @@ The following options are available when defining model schemas:
 <a name="queryRaw"></a>
 ### queryRaw(queryString, callback)
 
-`.queryRaw` performs a raw query on the gremlin-orm root and returns raw data
+`.queryRaw` performs a raw query on the gremlin-mapper root and returns raw data
 
 ##### Arguments
 * `queryString`: Gremlin query as a string
@@ -631,7 +630,7 @@ Knows.find({'through': 'school'}).findVertex(Person, {'occupation': 'developer'}
 
 ## Contributing
 
-Please submit issues/pull requests if you have feedback or message the gremlin-orm team to be added as a contributor: gremlin.orm@gmail.com
+Please submit issues/pull requests if you have feedback or message the gremlin-mapper team to be added as a contributor: gremlin.orm@gmail.com
 
 ## Authors
 
