@@ -2,7 +2,7 @@ const Gremlin = require('gremlin');
 const VertexModel = require('./models/vertex-model');
 const EdgeModel = require('./models/edge-model');
 
-class Gorm {
+class GremlinMapper {
   constructor(dialect, port, url, options) {
     // Constants
     this.DIALECTS = {AZURE: 'azure'};
@@ -161,4 +161,4 @@ class Gorm {
   }
 }
 
-module.exports = Gorm;
+module.exports = GremlinMapper;
