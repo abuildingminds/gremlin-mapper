@@ -1,9 +1,9 @@
-# gremlin-mapper
+# gremlin-mapper-promisified
 
 [![Build Status](https://travis-ci.org/gremlin-mapper/gremlin-mapper.svg?branch=master)](https://travis-ci.org/gremlin-mapper/gremlin-mapper)
 [![Coverage Status](https://coveralls.io/repos/github/gremlin-mapper/gremlin-mapper/badge.svg?branch=master&update)](https://coveralls.io/github/gremlin-mapper/gremlin-mapper?branch=master)
 
-gremlin-mapper is an gremlin graph databases object mapper for JavaScript.  Currently working nad tested on Azure Cosmos DB.
+gremlin-mapper is an gremlin graph databases object mapper for JavaScript.  Currently developed and tested on Azure Cosmos DB.
 
 ## Installation
 
